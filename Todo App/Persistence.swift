@@ -8,23 +8,13 @@
 import CoreData
 
 struct PersistenceController {
+    // MARK: - 1. PERSISTENT CONTROLLER
     static let shared = PersistenceController()
-
-    @MainActor
-    static let preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
-
+    
+    // MARK: - 2. PERSISTENT CONTAINER
     let container: NSPersistentContainer
 
+    // MARK: - 3. INITIALIZATION (load the persistent store)
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Todo_App")
         if inMemory {
@@ -37,4 +27,18 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
+    
+    // MARK: - 4. PREVIEW
+    @MainActor
+    static let preview: PersistenceController = {
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        return result
+    }()
 }
