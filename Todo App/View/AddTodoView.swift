@@ -10,10 +10,25 @@ import SwiftUI
 struct AddTodoView: View {
     // MARK: - PROPERTIES
     
+    @State private var name: String = ""
+    @State private var priority: String = "Normal"
+    
+    let priorities = ["High", "Normal", "Low"]
+    
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Form {
+                    // MARK: - TODO NAME
+                    TextField("Todo", text: $name)
+                } //: FORM
+                
+                Spacer()
+            } //: VSTACK
+            .navigationBarTitle("New Todo", displayMode: .inline)
+        } //: NAVIGATION
     }
 }
 
