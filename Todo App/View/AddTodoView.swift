@@ -33,6 +33,11 @@ struct AddTodoView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     
                     // MARK: - SAVE BUTTON
+                    Button(action: {
+                        print("Save a new todo item.")
+                    }) {
+                        Text("Save")
+                    } //: SAVE BUTTON
                 } //: FORM
                 
                 Spacer()
