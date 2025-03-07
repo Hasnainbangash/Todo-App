@@ -22,7 +22,7 @@ struct ContentView: View {
             .navigationBarTitle("Todo", displayMode: .inline)
             .navigationBarItems(trailing:
                 Button(action: {
-                self.showingAddTodoView.toggle()
+                    self.showingAddTodoView.toggle()
                 }) {
                     Image(systemName: "plus")
                 } //: ADD BUTTON
