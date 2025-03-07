@@ -37,14 +37,16 @@ struct AddTodoView: View {
                     
                     // MARK: - SAVE BUTTON
                     Button(action: {
-                        let todo = Todo(context: self.managedObjectContext)
-                        todo.name = self.name
-                        todo.priority = self.priority
-                        
-                        do {
-                            try self.managedObjectContext.save()
-                        } catch {
-                            print(error)
+                        if self.name != "" {
+                            let todo = Todo(context: self.managedObjectContext)
+                            todo.name = self.name
+                            todo.priority = self.priority
+                            
+                            do {
+                                try self.managedObjectContext.save()
+                            } catch {
+                                print(error)
+                            }
                         }
                     }) {
                         Text("Save")
