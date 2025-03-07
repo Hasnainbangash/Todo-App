@@ -23,6 +23,16 @@ struct AddTodoView: View {
                 Form {
                     // MARK: - TODO NAME
                     TextField("Todo", text: $name)
+                    
+                    // MARK: - TODO PRIORITY
+                    Picker("Priority", selection: $priority) {
+                        ForEach(priorities, id: \.self) {
+                            Text($0)
+                        } //: LOOP
+                    } //: PICKER
+                    .pickerStyle(SegmentedPickerStyle())
+                    
+                    // MARK: - SAVE BUTTON
                 } //: FORM
                 
                 Spacer()
