@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     // MARK: - PROPERTIES
     
+    @State private var showingAddTodoView: Bool = false
+    
     // MARK: - BODY
     
     var body: some View {
@@ -20,10 +22,13 @@ struct ContentView: View {
             .navigationBarTitle("Todo", displayMode: .inline)
             .navigationBarItems(trailing:
                 Button(action: {
-                    // Show add todo view
+                self.showingAddTodoView.toggle()
                 }) {
                     Image(systemName: "plus")
                 } //: ADD BUTTON
+                .sheet(isPresented: $showingAddTodoView) {
+                    AddTodoView()
+                }
             )
         } //: NAVIGATION
     }
