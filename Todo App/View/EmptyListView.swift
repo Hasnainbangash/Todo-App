@@ -13,9 +13,23 @@ struct EmptyListView: View {
     // MARK: - BODY
     
     var body: some View {
-        VStack(alignment: .center, spacing: 20) {
-            Text("Use your time wisely.")
-        } //: VSTACK
+        ZStack {
+            VStack(alignment: .center, spacing: 20) {
+                Image("illustration-no1")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(minWidth: 256, idealWidth: 280, maxWidth: 360, minHeight: 256, idealHeight: 280, maxHeight: 360, alignment: .center)
+                    .layoutPriority(1)
+                
+                Text("Use your time wisely.")
+                    .layoutPriority(0.5)
+                    .font(.system(.headline, design: .rounded))
+            } //: VSTACK
+            .padding(.horizontal)
+        } //: ZSTACK
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.gray)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
