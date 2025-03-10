@@ -30,6 +30,10 @@ struct AddTodoView: View {
                 VStack(alignment: .center, spacing: 20) {
                     // MARK: - TODO NAME
                     TextField("Todo", text: $name)
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemFill))
+                        .cornerRadius(9)
+                        .font(.system(size: 24, weight: .bold, design: .default))
                     
                     // MARK: - TODO PRIORITY
                     Picker("Priority", selection: $priority) {
@@ -61,6 +65,12 @@ struct AddTodoView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Save")
+                            .font(.system(size: 24, weight: .bold, design: .default))
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(9)
+                            .foregroundColor(Color.white)
                     } //: SAVE BUTTON
                 } //: VSTACK
                 .padding(.horizontal)
