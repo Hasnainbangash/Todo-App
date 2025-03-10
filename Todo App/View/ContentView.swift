@@ -44,6 +44,21 @@ struct ContentView: View {
             )
         } //: NAVIGATION
     }
+    
+    // MARK: - FUCNTIONS
+    
+    private func deleteTodo(at offsets: IndexSet) {
+        for index in offsets {
+            let todo = todos[index]
+            managedObjectContext.delete(todo)
+            
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
 
 // MARK: - PREVIEW
