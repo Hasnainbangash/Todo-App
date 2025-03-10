@@ -35,6 +35,7 @@ struct SettingsView: View {
                     .foregroundColor(Color.secondary)
             } //: VSTACK
             .navigationBarTitle("Settings", displayMode: .inline)
+            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         } //: NAVIGATION
     }
 }
