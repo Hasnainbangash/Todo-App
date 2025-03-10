@@ -20,6 +20,10 @@ struct SettingsView: View {
                 Form {
                     Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 } //: FORM
+                // Grouped List Style adds a grey bar above and below the list and form. With this small modifications we can visually separate the secions in the forms
+                .listStyle(GroupedListStyle())
+                // Using this modifier we can change the design of the form because we want to enabale this inset style for tjhe group form therefore we must set the horizontal style environment value to compact from regular such as is the case to full screen on ipad like the settings app on the ipad
+                .environment(\.horizontalSizeClass, .regular)
                 
                 // MARK: - FOOTER
                 
