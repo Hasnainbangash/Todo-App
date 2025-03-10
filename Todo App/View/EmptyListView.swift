@@ -28,7 +28,7 @@ struct EmptyListView: View {
             .padding(.horizontal)
         } //: ZSTACK
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(Color.gray)
+        .background(Color("ColorBase"))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -37,4 +37,5 @@ struct EmptyListView: View {
 
 #Preview {
     EmptyListView()
+        .colorScheme(.dark)
 }
