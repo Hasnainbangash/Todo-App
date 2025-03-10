@@ -24,6 +24,11 @@ struct SettingsView: View {
                 // MARK: - FOOTER
                 
                 Text("Copyright © All rights reserved.\nBetter Apps ♡ Less Code")
+                    .multilineTextAlignment(.center)
+                    .font(.footnote)
+                    .padding(.top, 6)
+                    .padding(.bottom, 8)
+                    .foregroundColor(Color.secondary)
             } //: VSTACK
             .navigationBarTitle("Settings", displayMode: .inline)
         } //: NAVIGATION
