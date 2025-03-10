@@ -33,7 +33,9 @@ struct ContentView: View {
                 .onDelete(perform: deleteTodo)
             } //: LIST
             .navigationBarTitle("Todo", displayMode: .inline)
-            .navigationBarItems(trailing:
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing:
                 Button(action: {
                     self.showingAddTodoView.toggle()
                 }) {
