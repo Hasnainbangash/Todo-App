@@ -10,6 +10,8 @@ import SwiftUI
 struct EmptyListView: View {
     // MARK: - PROPERTIES
     
+    @State private var isAnimated: Bool = false
+    
     // MARK: - BODY
     
     var body: some View {
@@ -26,6 +28,12 @@ struct EmptyListView: View {
                     .font(.system(.headline, design: .rounded))
             } //: VSTACK
             .padding(.horizontal)
+            .opacity(isAnimated ? 1 : 0)
+            .offset(y: isAnimated ? 0 : -50)
+            .animation(.easeOut(duration: 1.5))
+            .onAppear {
+                self.isAnimated.toggle()
+            }
         } //: ZSTACK
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color("ColorBase"))
