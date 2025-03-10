@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
+    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
+    
     @State private var showingAddTodoView: Bool = false
     
     // MARK: - BODY
