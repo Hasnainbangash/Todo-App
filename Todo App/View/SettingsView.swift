@@ -18,7 +18,16 @@ struct SettingsView: View {
                 // MARK: - FORM
                 
                 Form {
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    // MARK: - SECTION 4
+                    
+                    Section(header: Text("About the application")) {
+                        FormRowStaticView(icon: "gear", firstText: "Application", secondText: "Todo")
+                        FormRowStaticView(icon: "checkmark.seal", firstText: "Compatibility", secondText: "iPhone, iPad")
+                        FormRowStaticView(icon: "keyboard", firstText: "Developer", secondText: "John / Jane")
+                        FormRowStaticView(icon: "paintbrush", firstText: "Designer", secondText: "Robert Petras")
+                        FormRowStaticView(icon: "flag", firstText: "Version", secondText: "1.0.0")
+                    } //: SECTION 4
+                    .padding(.vertical, 3)
                 } //: FORM
                 // Grouped List Style adds a grey bar above and below the list and form. With this small modifications we can visually separate the secions in the forms
                 .listStyle(GroupedListStyle())
