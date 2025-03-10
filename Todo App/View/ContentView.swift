@@ -49,7 +49,7 @@ struct ContentView: View {
                 
                 // MARK: - NO TODO ITEMS
                 if todos.count == 0 {
-                    Text("Empty List")
+                    EmptyListView()
                 }
             } //: ZSTACK
         } //: NAVIGATION
