@@ -30,6 +30,7 @@ struct ContentView: View {
                         Text(todo.priority ?? "Unknown")
                     } //: HSTACK
                 } //: FOREACH
+                .onDelete(perform: deleteTodo)
             } //: LIST
             .navigationBarTitle("Todo", displayMode: .inline)
             .navigationBarItems(trailing:
