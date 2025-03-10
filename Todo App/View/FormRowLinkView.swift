@@ -19,6 +19,7 @@ struct FormRowLinkView: View {
 
 // MARK: - PREVIEW
 
-#Preview {
+#Preview(traits: .fixedLayout(width: 375, height: 60)) {
     FormRowLinkView()
+        .padding()
 }
