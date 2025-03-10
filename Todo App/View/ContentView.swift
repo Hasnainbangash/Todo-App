@@ -20,8 +20,16 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(0..<5) { item in
-                Text("Hello, World!")
+            List {
+                ForEach(self.todos, id: \.self) { todo in
+                    HStack {
+                        Text(todo.name ?? "Unknown")
+                        
+                        Spacer()
+                        
+                        Text(todo.priority ?? "Unknown")
+                    } //: HSTACK
+                } //: FOREACH
             } //: LIST
             .navigationBarTitle("Todo", displayMode: .inline)
             .navigationBarItems(trailing:
