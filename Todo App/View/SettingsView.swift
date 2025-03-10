@@ -18,6 +18,16 @@ struct SettingsView: View {
                 // MARK: - FORM
                 
                 Form {
+                    // MARK: - SECTION 3
+                    
+                    Section(header: Text("Follow us on social media")) {
+                        FormRowLinkView(icon: "globe", color: Color.pink, text: "Website", link: "https://swiftuimasterclass.com")
+                        FormRowLinkView(icon: "link", color: Color.blue, text: "Twitter", link: "https://twitter.com/robertpetras")
+                        FormRowLinkView(icon: "play.rectangle", color: Color.green, text: "Courses", link: "https://www.udemy.com/user/robert-petras")
+                        
+                    } //: SECTION 3
+                    .padding(.vertical, 3)
+                    
                     // MARK: - SECTION 4
                     
                     Section(header: Text("About the application")) {
