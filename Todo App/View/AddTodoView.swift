@@ -27,7 +27,7 @@ struct AddTodoView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Form {
+                VStack(alignment: .center, spacing: 20) {
                     // MARK: - TODO NAME
                     TextField("Todo", text: $name)
                     
@@ -62,7 +62,9 @@ struct AddTodoView: View {
                     }) {
                         Text("Save")
                     } //: SAVE BUTTON
-                } //: FORM
+                } //: VSTACK
+                .padding(.horizontal)
+                .padding(.vertical, 30)
                 
                 Spacer()
             } //: VSTACK
