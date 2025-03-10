@@ -49,5 +49,7 @@ struct ContentView: View {
 // MARK: - PREVIEW
 
 #Preview {
+    let context = PersistenceController.shared.container.viewContext
     ContentView()
+        .environment(\.managedObjectContext, context)
 }
