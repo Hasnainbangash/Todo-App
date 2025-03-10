@@ -10,6 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     // MARK: - PROPERTIES
     
+    @Environment(\.presentationMode) var presentationMode
+    
     // MARK: - BODY
     
     var body: some View {
@@ -53,6 +55,13 @@ struct SettingsView: View {
                     .padding(.bottom, 8)
                     .foregroundColor(Color.secondary)
             } //: VSTACK
+            .navigationBarItems(trailing:
+                Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "xmark")
+                }
+            )
             .navigationBarTitle("Settings", displayMode: .inline)
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         } //: NAVIGATION
