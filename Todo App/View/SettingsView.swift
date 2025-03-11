@@ -154,6 +154,7 @@ struct SettingsView: View {
             .navigationBarTitle("Settings", displayMode: .inline)
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         } //: NAVIGATION
+        .accentColor(themes[self.theme.themeSettings].themeColor)
     }
 }
 
