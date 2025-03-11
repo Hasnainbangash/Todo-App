@@ -96,6 +96,7 @@ struct SettingsView: View {
                                         Text(item.themeName)
                                     } //: HSTACK
                                 } //: BUTTON
+                                .accentColor(Color.primary)
                             } //: LOOP
                         } //: LIST
                     } //: SECTION 2
