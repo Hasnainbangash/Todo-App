@@ -45,13 +45,13 @@ struct SettingsView: View {
                         } //: PICKER
                         .pickerStyle(.navigationLink)
                         .onReceive([self.iconSettings.currentIndex].publisher.first()) { (value) in
-                            let index = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName ?? 0)
+                            let index = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0
                             if index != value {
                                 UIApplication.shared.setAlternateIconName(self.iconSettings.iconNames[value]) { error in
                                     if let error = error {
                                         print(error.localizedDescription)
                                     } else {
-                                        print("Success you have changed the app icon.")
+                                        print("Success! You have changed the app icon.")
                                     }
                                 }
                             }
