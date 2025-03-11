@@ -82,7 +82,15 @@ struct SettingsView: View {
                     
                     // MARK: - SECTION 2
                     
-                    Section(header: Text("Choose the app theme")) {
+                    Section(header:
+                        HStack {
+                            Text("Choose the app theme")
+                            Image(systemName: "circle.fill")
+                                .resizable()
+                                .frame(width: 10, height: 10)
+                                .foregroundColor(themes[self.theme.themeSettings].themeColor)
+                        }
+                    ) {
                         List {
                             ForEach(themes, id: \.id) { item in
                                 Button(action: {
