@@ -20,6 +20,11 @@ struct ContentView: View {
     @State private var showingAddTodoView: Bool = false
     @State private var animatingButton: Bool = false
     
+    // THEME
+    
+    @ObservedObject var theme = ThemeSettings()
+    var themes: [Theme] = themeData
+    
     // MARK: - BODY
     
     var body: some View {
@@ -39,7 +44,7 @@ struct ContentView: View {
                 } //: LIST
                 .navigationBarTitle("Todo", displayMode: .inline)
                 .navigationBarItems(
-                    leading: EditButton(),
+                    leading: EditButton().accentColor(themes[self.theme.themeSettings].themeColor),
                     trailing:
                         Button(action: {
                             self.showingSettingsView.toggle()
@@ -47,6 +52,7 @@ struct ContentView: View {
                             Image(systemName: "paintbrush")
                                 .imageScale(.large)
                         } //: ADD BUTTON
+                        .accentColor(themes[self.theme.themeSettings].themeColor)
                         .sheet(isPresented: $showingSettingsView) {
                             SettingsView()
                                 .environmentObject(self.iconSettings)
@@ -65,12 +71,12 @@ struct ContentView: View {
                 ZStack {
                     Group {
                         Circle()
-                            .fill(Color.blue)
+                            .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(self.animatingButton ? 0.2 : 0)
                             .scaleEffect(self.animatingButton ? 1 : 0)
                             .frame(width: 68, height: 68, alignment: .center)
                         Circle()
-                            .fill(Color.blue)
+                            .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(self.animatingButton ? 0.15 : 0)
                             .scaleEffect(self.animatingButton ? 1 : 0)
                             .frame(width: 88, height: 88, alignment: .center)
@@ -86,6 +92,7 @@ struct ContentView: View {
                             .background(Circle().fill(Color("ColorBase")))
                             .frame(width: 48, height: 48, alignment: .center)
                     } //: BUTTON
+                    .accentColor(themes[self.theme.themeSettings].themeColor)
                     .onAppear {
                         self.animatingButton.toggle()
                     }
