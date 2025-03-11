@@ -13,6 +13,11 @@ struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var iconSettings: IconNames
     
+    // THEME
+    
+    let themes: [Theme] = themeData
+    @ObservedObject var theme = ThemeSettings()
+    
     // MARK: - BODY
     
     var body: some View {
@@ -73,6 +78,27 @@ struct SettingsView: View {
                             }
                         }
                     } //: SECTION 1
+                    .padding(.vertical, 3)
+                    
+                    // MARK: - SECTION 2
+                    
+                    Section(header: Text("Choose the app theme")) {
+                        List {
+                            ForEach(themes, id: \.id) { item in
+                                Button(action: {
+                                    self.theme.themeSettings = item.id
+                                    UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                }) {
+                                    HStack {
+                                        Image(systemName: "circle.fill")
+                                            .foregroundColor(item.themeColor)
+                                        
+                                        Text(item.themeName)
+                                    } //: HSTACK
+                                } //: BUTTON
+                            } //: LOOP
+                        } //: LIST
+                    } //: SECTION 2
                     .padding(.vertical, 3)
                     
                     // MARK: - SECTION 3
