@@ -118,6 +118,19 @@ struct ContentView: View {
             }
         }
     }
+    
+    private func colorize(priority: String) -> Color {
+        switch priority {
+        case "High":
+            return .pink
+        case "Normal":
+            return .green
+        case "Low":
+            return .blue
+        default:
+            return .gray
+        }
+    }
 }
 
 // MARK: - PREVIEW
