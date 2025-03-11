@@ -29,22 +29,9 @@
 		D0B0C4162D7AD393001DA445 /* Todo AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Todo AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D09B1A522D7FFA5D00B2C3CB /* Exceptions for "Todo App" folder in "Todo App" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Todo-App-Info.plist",
-			);
-			target = D0B0C3F62D7AD390001DA445 /* Todo App */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D0B0C3F92D7AD390001DA445 /* Todo App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				D09B1A522D7FFA5D00B2C3CB /* Exceptions for "Todo App" folder in "Todo App" target */,
-			);
 			path = "Todo App";
 			sourceTree = "<group>";
 		};

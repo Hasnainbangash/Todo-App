@@ -15,6 +15,7 @@ struct Todo_AppApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(IconNames()) // With this the cntent view will be aware of every chnage of this file
         }
     }
 }

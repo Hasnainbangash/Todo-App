@@ -15,7 +15,7 @@
 			<key>UIPrerenderedIcon</key>
 			<false/>
 		</dict>
-        <key>CFBundleAlternateIcon</key>
+        <key>CFBundleAlternateIcons</key>
         <dict>
             <key>Blue Light</key>
             <dict>
