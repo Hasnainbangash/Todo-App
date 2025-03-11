@@ -11,6 +11,7 @@ struct SettingsView: View {
     // MARK: - PROPERTIES
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var iconSettings: IconNames
     
     // MARK: - BODY
     
@@ -72,4 +73,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environmentObject(IconNames())
 }
