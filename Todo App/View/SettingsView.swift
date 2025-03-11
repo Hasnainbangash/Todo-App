@@ -21,13 +21,38 @@ struct SettingsView: View {
                 // MARK: - FORM
                 
                 Form {
+                    // MARK: - SECTION 1
+                    
+                    Section(header: Text("Choose the app icon")) {
+                        Picker(selection: $iconSettings.currentIndex, label: Text("App Icons")) {
+                            ForEach(0..<iconSettings.iconNames.count) { index in
+                                HStack {
+                                    // UIImage is used because the image is in app bundle
+                                    Image(uiImage: UIImage(named: self.iconSettings.iconNames[index] ?? "Blue") ?? UIImage())
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 44, height: 44)
+                                        .cornerRadius(8)
+                                    
+                                    Spacer().frame(width: 8)
+                                    
+                                    Text(self.iconSettings.iconNames[index] ?? "Blue")
+                                        .frame(alignment: .leading)
+                                } //: HSTACK
+                                .padding(3)
+                            } //: LOOP
+                        } //: PICKER
+                        .pickerStyle(.navigationLink)
+                    } //: SECTION 1
+                    .padding(.vertical, 3)
+                    
                     // MARK: - SECTION 3
                     
                     Section(header: Text("Follow us on social media")) {
                         FormRowLinkView(icon: "globe", color: Color.pink, text: "Website", link: "https://swiftuimasterclass.com")
                         FormRowLinkView(icon: "link", color: Color.blue, text: "Twitter", link: "https://twitter.com/robertpetras")
                         FormRowLinkView(icon: "play.rectangle", color: Color.green, text: "Courses", link: "https://www.udemy.com/user/robert-petras")
-                        
                     } //: SECTION 3
                     .padding(.vertical, 3)
                     
