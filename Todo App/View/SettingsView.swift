@@ -16,7 +16,7 @@ struct SettingsView: View {
     // THEME
     
     let themes: [Theme] = themeData
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
     @State private var isThemeChanged: Bool = false
     
     // MARK: - BODY
