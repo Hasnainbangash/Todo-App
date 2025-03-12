@@ -114,9 +114,8 @@ struct SettingsView: View {
                     .alert(isPresented: $isThemeChanged) {
                         Alert(
                             title: Text("SUCCESS!"),
-                            message: Text("App has been changed to the \(theme[self.theme.themeSettings].themeName). Now close and restart it!"),
-                            dismissButton: .default(Text("OK"))
-                        )
+                            message: Text("App has been changed to the \(themes[self.theme.themeSettings].themeName). Now close and restart it!"),
+                            dismissButton: .default(Text("OK")))
                     }
 
                     
